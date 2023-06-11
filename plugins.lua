@@ -3,7 +3,8 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
   {
-    "christoomey/vim-tmux-navigator"
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
   {
     "neovim/nvim-lspconfig",
@@ -96,6 +97,9 @@ local plugins = {
   },
   {
     "maxmellon/vim-jsx-pretty"
+  },
+  {
+    "ziglang/zig.vim"
   },
   {
     "w0rp/ale"

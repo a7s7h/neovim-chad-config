@@ -27,3 +27,5 @@ vim.g.ale_linter_aliases = {
 vim.g.ale_linters = {
   svelte = { 'stylelint', 'eslint' }
 }
+
+vim.opt.colorcolumn = "79"

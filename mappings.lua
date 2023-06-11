@@ -1,6 +1,15 @@
 ---@type MappingsTable
 local M = {}
 
+M.general = {
+  n = {
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "window righ" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "window up" },
+  }
+}
+
 M.dap = {
   n = {
     ["<leader>b"] = {
@@ -58,8 +67,15 @@ M.rusttools = {
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<C-d>"] = { "<C-d>zz", "half page down centered" },
+    ["<C-u>"] = { "<C-u>zz", "half page up cetered" },
+    ["YY"] = { "va}Vy", "Yank code block" },
+
+    -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
+  x = {
+    ["<leader>p"] = { "\"_dP", "paste and keep register" },
+  }
 }
 
 M.crates = {
