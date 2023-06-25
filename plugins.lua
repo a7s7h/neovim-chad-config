@@ -36,7 +36,7 @@ local plugins = {
   },
   -- dap
   {
-     'mfussenegger/nvim-dap',
+    'mfussenegger/nvim-dap',
   },
   {
     'rcarriga/nvim-dap-ui',
@@ -67,7 +67,7 @@ local plugins = {
     end,
   },
   {
-     "rust-lang/rust.vim",
+    "rust-lang/rust.vim",
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1
@@ -121,15 +121,27 @@ local plugins = {
     ft = "svelte",
   },
   {
-     "kylechui/nvim-surround",
+    "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
+      require("nvim-surround").setup({
         -- default
       })
     end
   },
+  {
+    "MunifTanjim/prettier.nvim",
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'jose-elias-alvarez/null-ls.nvim',
+    },
+    config = function()
+      require("prettier").setup({
+        bin = 'prettier',
+      })
+    end
+  }
 }
 
 return plugins
