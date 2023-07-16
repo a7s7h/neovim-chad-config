@@ -13,7 +13,8 @@ local servers = {
   "tsserver",
   "clangd",
   "svelte",
-  "zls"
+  "zls",
+  "prismals",
 }
 
 for _, lsp in ipairs(servers) do
@@ -29,22 +30,22 @@ lspconfig.cssls.setup {
     css = {
       validate = true,
       lint = {
-        unknownAtRules = "ignore"
-    }
-  },
+        unknownAtRules = "ignore",
+      },
+    },
     scss = {
       validate = true,
       lint = {
-        unknownAtRules = "ignore"
-      }
+        unknownAtRules = "ignore",
+      },
+    },
+    less = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
   },
-  less = {
-    validate = true,
-    lint = {
-      unknownAtRules = "ignore"
-    }
-  },
- },
 }
 
 lspconfig.denols.setup {
@@ -54,8 +55,13 @@ lspconfig.denols.setup {
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
-  root_dir = lspconfig.util.root_pattern("package.json"),
-  single_file_support = false
+  root_dir = lspconfig.util.root_pattern "package.json",
+  single_file_support = false,
+}
+
+lspconfig.prismals.setup {
+  on_attach = on_attach,
+  root_dir = lspconfig.util.root_pattern "package.json",
 }
 
 --lspconfig.rust_analyzer.setup(
