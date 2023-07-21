@@ -7,12 +7,12 @@ local util = require "lspconfig/util"
 -- if you just want default config for the servers then put them in a table
 local servers = {
   "html",
-  "tailwindcss",
-  "cssls",
-  "denols",
-  "tsserver",
-  "clangd",
   "svelte",
+  "tsserver",
+  "cssls",
+  "tailwindcss",
+  -- "denols",
+  "clangd",
   "zls",
   "prismals",
 }
@@ -48,10 +48,10 @@ lspconfig.cssls.setup {
   },
 }
 
-lspconfig.denols.setup {
-  on_attach = on_attach,
-  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-}
+-- lspconfig.denols.setup {
+--   on_attach = on_attach,
+--   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+-- }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
@@ -62,6 +62,32 @@ lspconfig.tsserver.setup {
 lspconfig.prismals.setup {
   on_attach = on_attach,
   root_dir = lspconfig.util.root_pattern "package.json",
+}
+
+lspconfig.emmet_ls.setup {
+  capabilities = capabilities,
+  filetypes = {
+    "css",
+    "eruby",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "sass",
+    "scss",
+    "svelte",
+    "pug",
+    "typescriptreact",
+    "vue",
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ["bem.enabled"] = true,
+      },
+    },
+  },
 }
 
 --lspconfig.rust_analyzer.setup(

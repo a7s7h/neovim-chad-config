@@ -35,26 +35,24 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
   -- dap
-  {
-    "mfussenegger/nvim-dap",
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    lazy = false,
-    config = function()
-      require "custom.configs.dapui"
-    end,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  -- },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   lazy = false,
+  --   config = function()
+  --     require "custom.configs.dapui"
+  --   end,
+  -- },
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
@@ -110,16 +108,16 @@ local plugins = {
   {
     "maxmellon/vim-jsx-pretty",
   },
-  {
-    "ziglang/zig.vim",
-  },
-  {
-    "w0rp/ale",
-  },
-  {
-    "burner/vim-svelte",
-    ft = "svelte",
-  },
+  -- {
+  --   "ziglang/zig.vim",
+  -- },
+  -- {
+  --   "w0rp/ale",
+  -- },
+  -- {
+  --   "burner/vim-svelte",
+  --   ft = "svelte",
+  -- },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -139,7 +137,35 @@ local plugins = {
     config = function()
       require("prettier").setup {
         bin = "prettier",
+        filetypes = {
+          "css",
+          "graphql",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "json",
+          "less",
+          "svelte",
+          "markdown",
+          "scss",
+          "typescript",
+          "typescriptreact",
+          "yaml",
+        },
       }
+    end,
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    config = function()
+      require("trouble").setup {}
     end,
   },
 }
