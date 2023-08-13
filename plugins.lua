@@ -130,12 +130,16 @@ local plugins = {
   },
   {
     "MunifTanjim/prettier.nvim",
+    lazy = false,
     dependencies = {
       "neovim/nvim-lspconfig",
       "jose-elias-alvarez/null-ls.nvim",
     },
     config = function()
       require("prettier").setup {
+        cli_options = {
+          semi = false,
+        },
         bin = "prettier",
         filetypes = {
           "css",

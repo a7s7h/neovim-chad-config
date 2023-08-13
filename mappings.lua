@@ -95,4 +95,10 @@ M.trouble = {
   },
 }
 
+M.prettier = {
+  n = {
+    ["<leader>pf"] = { "<cmd>Prettier<cr>", "format with prettier" },
+  },
+}
+
 return M
