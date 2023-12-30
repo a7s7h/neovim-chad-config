@@ -15,6 +15,8 @@ local servers = {
   "clangd",
   "zls",
   "prismals",
+  "gopls",
+  "templ",
 }
 
 for _, lsp in ipairs(servers) do
@@ -43,6 +45,23 @@ lspconfig.cssls.setup {
       validate = true,
       lint = {
         unknownAtRules = "ignore",
+      },
+    },
+  },
+}
+
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod", "gowork", "gotmpl", "templ"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+          unusedparams = true,
       },
     },
   },

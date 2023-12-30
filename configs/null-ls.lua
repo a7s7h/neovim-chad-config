@@ -12,6 +12,8 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 local sources = {
+  b.formatting.gofumpt,
+  b.formatting.goimports_reviser,
 
   -- webdev stuff
   b.formatting.deno_fmt,                                                           -- choosed deno for ts/js files cuz its very fast!
