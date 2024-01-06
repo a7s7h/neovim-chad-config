@@ -32,8 +32,9 @@ vim.g.ale_linters = {
 vim.api.nvim_command "set relativenumber"
 vim.api.nvim_command "set nowrap"
 
+-- additional filetypes
 vim.filetype.add({
-  extension = {
-    templ = "templ",
-  }
+ extension = {
+  templ = "templ",
+ },
 })
