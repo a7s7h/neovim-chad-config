@@ -172,6 +172,14 @@ local plugins = {
       require("trouble").setup {}
     end,
   },
+  {
+    'windwp/nvim-autopairs',
+    opts = {} -- this is equalent to setup({}) function
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {}
+  },
 }
 
 return plugins

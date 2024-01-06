@@ -67,14 +67,23 @@ M.rusttools = {
 
 M.general = {
   n = {
-    ["<C-d>"] = { "<C-d>zz", "half page down centered" },
-    ["<C-u>"] = { "<C-u>zz", "half page up cetered" },
+    ["<C-d>"] = { "<C-d>zz", "Half page down centered" },
+    ["<C-u>"] = { "<C-u>zz", "Half page up cetered" },
     ["YY"] = { "va}Vy", "Yank code block" },
-
+    ["<A-j>"] = { ":m .1<CR>==", "Move block"},
+    ["<A-k>"] = { ":m .-2<CR>==", "Move block"},
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
+  i = {
+    ["<A-j>"] = { "<Esc>:m .1<CR>==gi", "Move block"},
+    ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move block"},
+  },
   x = {
-    ["<leader>p"] = { '"_dP', "paste and keep register" },
+    ["<leader>p"] = { '"_dP', "Paste and keep register" },
+    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move block"},
+    ["<A-k>"] = { ":m '<-2<CR>gv=gv", "Move block"},
+    ["J"] = { ":m '>+1<CR>gv=gv", "Move block"},
+    ["K"] = { ":m '<-2<CR>gv=gv", "Move block"},
   },
 }
 

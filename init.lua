@@ -31,3 +31,9 @@ vim.g.ale_linters = {
 -- vim.opt.colorcolumn = "79"
 vim.api.nvim_command "set relativenumber"
 vim.api.nvim_command "set nowrap"
+
+vim.filetype.add({
+  extension = {
+    templ = "templ",
+  }
+})

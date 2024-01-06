@@ -10,8 +10,11 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "go",
     "markdown",
     "markdown_inline",
+    "prisma",
+    "svelte",
   },
   indent = {
     enable = true,
@@ -19,6 +22,9 @@ M.treesitter = {
     --   "python"
     -- },
   },
+  autotag = {
+    enable = true,
+  }
 }
 
 M.mason = {
@@ -31,8 +37,9 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
+--  "deno",
     "prettier",
+    "gopls",
 
     -- c/cpp stuff
     "clangd",
@@ -54,6 +61,10 @@ M.nvimtree = {
         git = true,
       },
     },
+  },
+  
+  filters = {
+    dotfiles = true,
   },
 }
 

@@ -15,6 +15,9 @@ local servers = {
   "clangd",
   "zls",
   "prismals",
+  "gopls",
+  "templ",
+  "htmx",
 }
 
 for _, lsp in ipairs(servers) do
@@ -47,6 +50,24 @@ lspconfig.cssls.setup {
     },
   },
 }
+
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod", "gowork", "gotmpl", "templ"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      }
+    }
+  }
+}
+
 
 -- lspconfig.denols.setup {
 --   on_attach = on_attach,
@@ -90,6 +111,24 @@ lspconfig.emmet_ls.setup {
   },
 }
 
+lspconfig.tailwindcss.setup({
+  on_attach = on_attach,
+  filetypes = {
+    "templ"
+  },
+  init_options = {
+    userLanguages = {
+      templ = "html"
+    }
+  }
+})
+
+lspconfig.htmx.setup {
+  on_attach = on_attach,
+  filetypes = {
+    "templ"
+  }
+}
 --lspconfig.rust_analyzer.setup(
 --  on_attach = on_attach,
 --  capabilities = capabilities,
