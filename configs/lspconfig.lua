@@ -17,7 +17,6 @@ local servers = {
   "gopls",
   "templ",
   "htmx",
-  -- "denols",
 }
 
 for _, lsp in ipairs(servers) do
@@ -67,11 +66,6 @@ lspconfig.gopls.setup {
     }
   }
 }
-
--- lspconfig.denols.setup {
---   on_attach = on_attach,
---   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
--- }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
@@ -128,17 +122,3 @@ lspconfig.htmx.setup {
     "templ"
   }
 }
-
---lspconfig.rust_analyzer.setup(
---  on_attach = on_attach,
---  capabilities = capabilities,
---  filetypes = {"rust"},
---  root_dir = util.root_pattern("Cargo.toml"),
---  settings = {
---    ['rust-analyzer'] = {
---      cargo = {
---        allFeatures = true,
---      },
---    },
---  },
---})
