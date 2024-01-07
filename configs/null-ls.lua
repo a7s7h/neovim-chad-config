@@ -16,7 +16,6 @@ local sources = {
   b.formatting.goimports_reviser,
 
   -- webdev stuff
-  b.formatting.deno_fmt,                                                           -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "xsl", "html", "markdown", "css" } }, -- so prettier works only on these filetypes
 
   -- Lua
@@ -39,7 +38,7 @@ null_ls.setup {
         buffer = bufnr,
         group = group,
         callback = function()
-          -- vim.lsp.buf.format({ bufnr = bufnr, async = async })
+          vim.lsp.buf.format({ bufnr = bufnr, async = async })
         end,
         desc = "[lsp] format on save",
       })
@@ -47,7 +46,7 @@ null_ls.setup {
 
     if client.supports_method "textDocument/rangeFormatting" then
       vim.keymap.set("x", "<Leader>f", function()
-        -- vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
       end, { buffer = bufnr, desc = "[lsp] format" })
     end
   end,

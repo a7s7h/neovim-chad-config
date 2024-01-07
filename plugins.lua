@@ -108,16 +108,6 @@ local plugins = {
   {
     "maxmellon/vim-jsx-pretty",
   },
-  -- {
-  --   "ziglang/zig.vim",
-  -- },
-  -- {
-  --   "w0rp/ale",
-  -- },
-  -- {
-  --   "burner/vim-svelte",
-  --   ft = "svelte",
-  -- },
   {
     "kylechui/nvim-surround",
     version = "*",
