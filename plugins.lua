@@ -178,6 +178,15 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
 }
 
 return plugins
