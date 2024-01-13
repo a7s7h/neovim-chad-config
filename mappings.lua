@@ -10,6 +10,48 @@ M.general = {
   },
 }
 
+M.harpoon = {
+  n = {
+    ["<leader>a"] = {
+      function()
+        require("harpoon"):list():append()
+      end,
+      "Harpoon: add to list",
+    },
+    ["<C-e>"] = {
+      function()
+        local harpoon = require "harpoon"
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end,
+      "Harpoon: show list",
+    },
+    ["<leader>jj"] = {
+      function()
+        require("harpoon"):list():select(1)
+      end,
+      "Harpoon: 1",
+    },
+    ["<leader>jk"] = {
+      function()
+        require("harpoon"):list():select(2)
+      end,
+      "Harpoon: 2",
+    },
+    ["<leader>jl"] = {
+      function()
+        require("harpoon"):list():select(3)
+      end,
+      "Harpoon: 3",
+    },
+    ["<leader>j;"] = {
+      function()
+        require("harpoon"):list():select(4)
+      end,
+      "Harpoon: 4",
+    },
+  },
+}
+
 -- M.dap = {
 --   n = {
 --     ["<leader>b"] = {
@@ -70,20 +112,20 @@ M.general = {
     ["<C-d>"] = { "<C-d>zz", "Half page down centered" },
     ["<C-u>"] = { "<C-u>zz", "Half page up cetered" },
     ["YY"] = { "va}Vy", "Yank code block" },
-    ["<A-j>"] = { ":m .1<CR>==", "Move block"},
-    ["<A-k>"] = { ":m .-2<CR>==", "Move block"},
+    ["<A-j>"] = { ":m .1<CR>==", "Move block" },
+    ["<A-k>"] = { ":m .-2<CR>==", "Move block" },
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
   i = {
-    ["<A-j>"] = { "<Esc>:m .1<CR>==gi", "Move block"},
-    ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move block"},
+    ["<A-j>"] = { "<Esc>:m .1<CR>==gi", "Move block" },
+    ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move block" },
   },
   x = {
     ["<leader>p"] = { '"_dP', "Paste and keep register" },
-    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move block"},
-    ["<A-k>"] = { ":m '<-2<CR>gv=gv", "Move block"},
-    ["J"] = { ":m '>+1<CR>gv=gv", "Move block"},
-    ["K"] = { ":m '<-2<CR>gv=gv", "Move block"},
+    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move block" },
+    ["<A-k>"] = { ":m '<-2<CR>gv=gv", "Move block" },
+    ["J"] = { ":m '>+1<CR>gv=gv", "Move block" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "Move block" },
   },
 }
 

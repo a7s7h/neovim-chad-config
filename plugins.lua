@@ -163,12 +163,20 @@ local plugins = {
     end,
   },
   {
-    'windwp/nvim-autopairs',
-    opts = {} -- this is equalent to setup({}) function
+    "windwp/nvim-autopairs",
+    opts = {}, -- this is equalent to setup({}) function
   },
   {
     "windwp/nvim-ts-autotag",
-    opts = {}
+    opts = {},
+  },
+  {
+    "ThePrimeagen/harpoon",
+    opts = {},
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
 }
 
