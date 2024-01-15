@@ -159,10 +159,6 @@ local plugins = {
     end,
   },
   {
-    "windwp/nvim-autopairs",
-    opts = {},
-  },
-  {
     "windwp/nvim-ts-autotag",
     opts = {},
   },
@@ -185,6 +181,11 @@ local plugins = {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},
+    config = function()
+      require("notify").setup {
+        background_colour = "#000000",
+      }
+    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
