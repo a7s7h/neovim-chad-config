@@ -152,4 +152,27 @@ M.prettier = {
   },
 }
 
+M.flash = {
+  n = {
+    ["<C-g>"] = {
+      function()
+        require("flash").jump()
+      end,
+      "Flash jump",
+    },
+    ["<C-y>"] = {
+      function()
+        require("flash").treesitter_search()
+      end,
+      "Flash treesitter",
+    },
+    ["<C-t>"] = {
+      function()
+        require("flash").treesitter()
+      end,
+      "Flash treesitter",
+    },
+  },
+}
+
 return M
