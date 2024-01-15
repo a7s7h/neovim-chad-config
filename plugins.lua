@@ -153,18 +153,14 @@ local plugins = {
     "folke/trouble.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
     config = function()
       require("trouble").setup {}
     end,
   },
   {
     "windwp/nvim-autopairs",
-    opts = {}, -- this is equalent to setup({}) function
+    opts = {},
   },
   {
     "windwp/nvim-ts-autotag",
@@ -177,6 +173,13 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+  },
+  {
+    "folke/flash.nvim",
+    opts = {},
+    config = function()
+      require("flash").setup {}
+    end,
   },
   {
     "folke/noice.nvim",
