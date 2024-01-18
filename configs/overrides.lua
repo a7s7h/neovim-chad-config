@@ -25,7 +25,7 @@ M.treesitter = {
   },
   autotag = {
     enable = true,
-  }
+  },
 }
 
 M.mason = {
@@ -38,7 +38,7 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
---  "deno",
+    --  "deno",
     "prettier",
     "gopls",
 
