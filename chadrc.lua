@@ -14,7 +14,6 @@ M.ui = {
   transparency = true,
   statusline = {
     theme = "minimal",
-    separator_style = "default",
   },
 }
 
