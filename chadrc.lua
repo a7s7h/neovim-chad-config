@@ -12,6 +12,10 @@ M.ui = {
   hl_add = highlights.add,
 
   transparency = true,
+  statusline = {
+    theme = "default",
+    separator_style = "arrow",
+  },
 }
 
 M.plugins = "custom.plugins"
