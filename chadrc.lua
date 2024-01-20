@@ -8,13 +8,17 @@ M.ui = {
   theme = "tokyonight",
   theme_toggle = { "ayu_light", "tokyonight" },
 
+  tabufline = {
+    show_numbers = false,
+  },
+
   hl_override = highlights.override,
   hl_add = highlights.add,
 
   transparency = true,
   statusline = {
-    theme = "vscode",
-    separator_style = "default",
+    theme = "default",
+    separator_style = "block",
   },
 }
 
