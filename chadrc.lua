@@ -13,8 +13,8 @@ M.ui = {
 
   transparency = true,
   statusline = {
-    theme = "default",
-    separator_style = "block",
+    theme = "vscode",
+    separator_style = "default",
   },
 }
 
