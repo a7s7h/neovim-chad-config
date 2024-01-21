@@ -21,7 +21,28 @@ M.harpoon = {
     ["<C-e>"] = {
       function()
         local harpoon = require "harpoon"
-        harpoon.ui:toggle_quick_menu(harpoon:list())
+        local conf = require("telescope.config").values
+        local function toggle_telescope(harpoon_files, useTelescope)
+          if useTelescope then
+            local file_paths = {}
+            for _, item in ipairs(harpoon_files.items) do
+              table.insert(file_paths, item.value)
+            end
+            require("telescope.pickers")
+              .new({}, {
+                prompt_title = "Harpoon",
+                finder = require("telescope.finders").new_table {
+                  results = file_paths,
+                },
+                previewer = conf.file_previewer {},
+                sorter = conf.generic_sorter {},
+              })
+              :find()
+          else
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+          end
+        end
+        toggle_telescope(harpoon:list(), false)
       end,
       "Harpoon: show list",
     },
