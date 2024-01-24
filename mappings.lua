@@ -70,6 +70,18 @@ M.harpoon = {
       end,
       "Harpoon: 4",
     },
+    ["<A-]>"] = {
+      function()
+        require("harpoon"):list():next()
+      end,
+      "Harpoon: next",
+    },
+    ["<A-[>"] = {
+      function()
+        require("harpoon"):list():prev()
+      end,
+      "Harpoon: prev",
+    },
   },
 }
 
