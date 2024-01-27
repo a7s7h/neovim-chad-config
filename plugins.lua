@@ -65,13 +65,13 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+  -- {
+  --   "max397574/better-escape.nvim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("better_escape").setup()
+  --   end,
+  -- },
   {
     "rust-lang/rust.vim",
     ft = "rust",
