@@ -15,8 +15,8 @@ local servers = {
   "zls",
   "prismals",
   "gopls",
-  "templ",
   "htmx",
+  "templ",
 }
 
 for _, lsp in ipairs(servers) do
@@ -53,8 +53,8 @@ lspconfig.cssls.setup {
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"gopls"},
-  filetypes = {"go", "gomod", "gowork", "gotmpl", "templ"},
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl", "templ" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
@@ -62,9 +62,9 @@ lspconfig.gopls.setup {
       usePlaceholders = true,
       analyses = {
         unusedparams = true,
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 lspconfig.tsserver.setup {
@@ -84,6 +84,7 @@ lspconfig.emmet_ls.setup {
     "css",
     "eruby",
     "html",
+    "templ",
     "javascript",
     "javascriptreact",
     "less",
@@ -104,21 +105,35 @@ lspconfig.emmet_ls.setup {
   },
 }
 
-lspconfig.tailwindcss.setup({
+lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   filetypes = {
-    "templ"
+    "templ",
   },
   init_options = {
     userLanguages = {
-      templ = "html"
-    }
-  }
-})
+      templ = "html",
+    },
+  },
+}
+
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "html",
+    "templ",
+  },
+}
 
 lspconfig.htmx.setup {
   on_attach = on_attach,
   filetypes = {
-    "templ"
-  }
+    "html",
+    "templ",
+  },
+}
+
+lspconfig.templ.setup {
+  on_attach = function() end,
 }
