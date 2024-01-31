@@ -5,6 +5,7 @@ M.treesitter = {
     "vim",
     "lua",
     "html",
+    "htmx",
     "css",
     "javascript",
     "typescript",
@@ -40,6 +41,7 @@ M.mason = {
     "typescript-language-server",
     --  "deno",
     "prettier",
+    "templ",
     "gopls",
 
     -- c/cpp stuff
