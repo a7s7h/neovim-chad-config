@@ -14,9 +14,9 @@ local servers = {
   "clangd",
   "zls",
   "prismals",
-  "gopls",
   "htmx",
   "templ",
+  "gopls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -132,8 +132,4 @@ lspconfig.htmx.setup {
     "html",
     "templ",
   },
-}
-
-lspconfig.templ.setup {
-  on_attach = function() end,
 }
