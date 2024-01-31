@@ -133,3 +133,7 @@ lspconfig.htmx.setup {
     "templ",
   },
 }
+
+lspconfig.templ.setup {
+  on_attach = function() end,
+}
